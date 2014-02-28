@@ -1,7 +1,7 @@
 {
   "name": "nor-git",
-  "version": "0.1.3",
-  "description": "",
+  "version": "0.1.4",
+  "description": "Helper utility for git",
   "main": "index.js",
   "bin": {
     "nor-git": "./bin/nor-git-update-file.js"

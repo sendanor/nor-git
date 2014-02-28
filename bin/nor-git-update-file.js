@@ -4,19 +4,26 @@
 "use strict";
 var debug = require('nor-debug');
 var fs = require('nor-fs');
-var argv = require('optimist').boolean('v').argv;
+var argv = require('optimist').boolean('q').boolean('v').argv;
 
 var verbose_level = 1;
 
-if(argv.q || argv.quiet) {
+if(argv.q) {
 	verbose_level = 0;
 }
 
-if(argv.v || argv.verbose) {
-	verbose_level = parseInt(argv.v || argv.verbose, 10) || 1;
+if(argv.v) {
+	verbose_level = 2;
+}
+
+if(argv.verbose) {
+	verbose_level = parseInt(argv.verbose, 10);
 }
 
 try {
+	if(verbose_level >= 3) {
+		debug.log('argv._ =' + argv._);
+	}
 
 	argv._.forEach(function(file) {
 
