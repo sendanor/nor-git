@@ -1,6 +1,8 @@
 nor-git
 =======
 
+$filename: README.md $
+
 Some git related utilities.
 
 TODO

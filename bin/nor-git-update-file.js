@@ -37,9 +37,12 @@ try {
 		var data = fs.sync.readFile(file, {'encoding':'utf8'});
 		debug.assert(data).is('string');
 
-		data = data.replace(/\$filename:([^$]*$]+)\$/g, function() {
-			changed = true;
-			return '$'+'filename: '+ filename + ' $'; 
+		data = data.replace(/(\$filename:([^$]*)\$)/g, function(match) {
+			var new_line = '$'+'filename: '+ filename + ' $';
+			if(new_line !== match) {
+				changed = true;
+			}
+			return new_line;
 		});
 		
 		if(changed) {
