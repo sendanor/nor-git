@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* $filename: $ */
+/* $filename: nor-git-update-file.js $ */
 
 "use strict";
 var debug = require('nor-debug');
@@ -13,7 +13,7 @@ try {
 		var filename = require('path').basename(file);
 		var data = fs.sync.readFile(file, {'encoding':'utf8'});
 		debug.assert(data).is('string');
-		data = data.replace(/\$filename:[^$]+\$/g, '$filename: '+filename+' $');
+		data = data.replace(/\$filename: nor-git-update-file.js $]+\$/g, '$filename: nor-git-update-file.js $');
 		fs.sync.writeFile(file+'.new', data, {'encoding':'utf8'});
 		fs.sync.rename(file, file+'.bak');
 		fs.sync.rename(file+'.new', file);
