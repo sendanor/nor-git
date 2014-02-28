@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+/* $filename: $ */
+
 "use strict";
 var debug = require('nor-debug');
 var fs = require('nor-fs');
@@ -11,10 +13,10 @@ try {
 		var filename = require('path').basename(file);
 		var data = fs.sync.readFile(file, {'encoding':'utf8'});
 		debug.assert(data).is('string');
-		data = data.replace(/\$filename:[^$]+\$/g, '$filename: '+filename+'$');
+		data = data.replace(/\$filename:[^$]+\$/g, '$filename: '+filename+' $');
 		fs.sync.writeFile(file+'.new', data, {'encoding':'utf8'});
-		fs.sync.move(file, file+'.bak');
-		fs.sync.move(file+'.new', file);
+		fs.sync.rename(file, file+'.bak');
+		fs.sync.rename(file+'.new', file);
 		fs.sync.unlink(file+'.bak');
 	});
 
