@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "nor-debug": ">= 0.1.22 <0.2.0",
-    "nor-fs": ">= 0.1.4 <0.2.0",
+    "nor-fs": ">= 0.1.5 <0.2.0",
     "optimist": ">= 0.6.1 <0.7.0"
   },
   "author": "Jaakko-Heikki Heusala <jheusala@iki.fi>",
