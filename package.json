@@ -1,6 +1,6 @@
 {
   "name": "nor-git",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Helper utility for git",
   "main": "index.js",
   "bin": {
@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "nor-debug" : ">= 0.1.42 < 0.2.0",
+    "nor-debug" : ">= 0.1.43 < 0.2.0",
     "nor-fs"    : ">= 0.1.10  < 0.2.0",
     "optimist"  : ">= 0.6.1  < 0.7.0"
   },
